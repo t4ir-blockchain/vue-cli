@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div v-for="image in dogImages" :key="image.id">
+    <span v-for="image in dogImages" :key="image.id">
       <img width="200" height="200" :src="image.url" alt="">
-    </div>
+    </span>
   </div>
 </template>
 

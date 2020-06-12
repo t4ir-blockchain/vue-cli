@@ -1,14 +1,17 @@
 <template>
   <div>
-    <div v-for="image in images" :key="image.id">
+    <span v-for="image in catImages" :key="image.id">
       <img width="200" height="200" :src="image.url" alt="">
-    </div>
+    </span>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'CatImage'
+  name: 'CatImage',
+  props: {
+    catImages: Array
+  }
 }
 </script>
 

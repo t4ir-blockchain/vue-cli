@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <h1>Dog & Cat</h1>
-    <Buttons @dogButtonClicked="getDog" />
+    <Buttons @dogButtonClicked="getDog" @catButtonClicked="getCat"/>
     <DogImage :dogImages="dogImages" />
-    <CatImage />
+    <CatImage :catImages="catImages" />
   </div>
 </template>
 
@@ -41,7 +41,7 @@ export default {
       axios.get('https://api.thecatapi.com/v1/images/search')
         .then(response => {
           console.log(response.data[0].url)
-          this.images.push({
+          this.catImages.push({
             id: Date.now(),
             url: response.data[0].url
           })
